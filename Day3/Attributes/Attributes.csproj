@@ -41,10 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdvancedUser.cs" />
-    <Compile Include="InstantiateAdvancedUser.cs" />
+    <Compile Include="InstantiateAdvancedUserAttribute.cs" />
     <Compile Include="InstantiateAttribute.cs" />
-    <Compile Include="IntValidator.cs" />
-    <Compile Include="MatchParameter.cs" />
+    <Compile Include="IntValidatorAttribute.cs" />
+    <Compile Include="MatchParameterAttribute.cs" />
     <Compile Include="StringValidatorAttribute.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
