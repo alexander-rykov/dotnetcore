@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 
 namespace FileStreams
 {
@@ -19,6 +20,7 @@ namespace FileStreams
             BlockCopy(source, destin);
             LineCopy(source, destin);
             MemoryBufferCopy(source, destin);
+            WebClient();
         }
 
         public static void ByteCopy(string source, string destin)
@@ -148,6 +150,21 @@ namespace FileStreams
             }
 
             */
+        }
+
+        public static void WebClient()
+        {
+            WebClient webClient = new WebClient();
+            using (var stream = webClient.OpenRead("http://google.com"))
+            {
+                /*
+                Console.WriteLine("WebClient(): CanRead = {0}", stream...); // TODO: print if it is possible to read from the stream
+                Console.WriteLine("WebClient(): CanWrite = {0}", stream...); // TODO: print if it is possible to write to the stream
+                Console.WriteLine("WebClient(): CanSeek = {0}", stream...); // TODO: print if it is possible to seek through the stream
+                */
+
+                // TODO: Save steam content to "google_request.txt" file.
+            }
         }
     }
 }
