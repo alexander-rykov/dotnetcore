@@ -47,7 +47,7 @@ namespace Monitor
             var threads = new List<Thread>();
 
             threads.AddRange(CreateWorkers(ewh, () => { myClass.Increase(); anClass.Decrease(); }, 10, 100000));
-            threads.AddRange(CreateWorkers(ewh, () => { myClass.Decrease(); anClass.Decrease(); }, 10, 100000));
+            threads.AddRange(CreateWorkers(ewh, () => { myClass.Decrease(); anClass.Increase(); }, 10, 100000));
 
             foreach (var thread in threads)
             {
