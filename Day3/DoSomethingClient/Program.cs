@@ -35,18 +35,24 @@ namespace DoSomethingClient
             };
 
             Method1(input);
-            Method2(input);
+            //Method2(input);
         }
 
         private static void Method1(Input input)
         {
             // TODO: Create a domain with name MyDomain.
-            AppDomain domain = null;
+            var appDomainSetup = new AppDomainSetup
+            {
+                ApplicationBase = AppDomain.CurrentDomain.BaseDirectory,
+                PrivateBinPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MyDomain")
+            };
+            AppDomain domain = AppDomain.CreateDomain("MyDomain", null, appDomainSetup);
             var loader = (DomainAssemblyLoader)domain.CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly().FullName, typeof(DomainAssemblyLoader).FullName);
 
             try
             {
                 Result result = null; // TODO: Use loader here.
+                result = loader.Load("MyLibrary, Version=1.2.3.4, Culture=neutral, PublicKeyToken=f46a87b3d9a80705", input);
 
                 Console.WriteLine("Method1: {0}", result.Value);
             }
@@ -56,6 +62,7 @@ namespace DoSomethingClient
             }
 
             // TODO: Unload domain
+            AppDomain.Unload(domain);
         }
 
         private static void Method2(Input input)
