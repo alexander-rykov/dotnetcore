@@ -1,7 +1,7 @@
 ﻿namespace Monitor
 {
-    // TODO: Use Monitor (not lock) to protect this structure.
-    public class MyClass
+    // TODO: Use SpinLock to protect this structure.
+    public class AnotherClass
     {
         private int _value;
 

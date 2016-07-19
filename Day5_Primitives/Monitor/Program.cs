@@ -42,10 +42,12 @@ namespace Monitor
             ewh = null; // TODO: Choose between manual or auto reset events to synchronize threads.
 
             var myClass = new MyClass();
+            var anClass = new AnotherClass();
+
             var threads = new List<Thread>();
 
-            threads.AddRange(CreateWorkers(ewh, () => { myClass.Increase(); }, 10, 100000));
-            threads.AddRange(CreateWorkers(ewh, () => { myClass.Decrease(); }, 10, 100000));
+            threads.AddRange(CreateWorkers(ewh, () => { myClass.Increase(); anClass.Decrease(); }, 10, 100000));
+            threads.AddRange(CreateWorkers(ewh, () => { myClass.Decrease(); anClass.Decrease(); }, 10, 100000));
 
             foreach (var thread in threads)
             {
@@ -63,7 +65,8 @@ namespace Monitor
                 // TODO: Wait unit all threads will finish their work.
             }
 
-            Console.WriteLine("Counter is " + myClass.Counter);
+            Console.WriteLine("MyClass.Counter is " + myClass.Counter);
+            Console.WriteLine("AnotherClass.Counter is " + anClass.Counter);
             Console.ReadKey();
         }
     }
