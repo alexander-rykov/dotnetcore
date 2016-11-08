@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DoSomethingClient")]
+[assembly: AssemblyTitle("SimpleAsyncAwait")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DoSomethingClient")]
+[assembly: AssemblyProduct("SimpleAsyncAwait")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f6815724-a59b-4ee6-8a32-d1d93146a9ca")]
+[assembly: Guid("0eeca852-52ea-4f82-8af3-34aa84fd3beb")]
 
 // Version information for an assembly consists of the following four values:
 //
